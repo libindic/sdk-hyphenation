@@ -1,0 +1,5 @@
+/build
+
+# Ignored by AndroidStudio
+*.iws
+*.iml
