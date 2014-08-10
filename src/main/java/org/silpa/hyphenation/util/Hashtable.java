@@ -1,5 +1,3 @@
-/* $Id: Hashtable.java,v 1.2 2003/08/17 21:55:24 dvd Exp $ */
-
 package org.silpa.hyphenation.util;
 
 // to compare performances
@@ -192,11 +190,3 @@ public class Hashtable extends java.util.Dictionary implements Cloneable {
         used = 0;
     }
 }
-
-/* $Log: Hashtable.java,v $
-/* Revision 1.2  2003/08/17 21:55:24  dvd
-/* Hyphenator.java is a java program
-/*
-* Revision 1.1  2003/08/17 20:31:00  dvd
-* CVS keywords added
-*/

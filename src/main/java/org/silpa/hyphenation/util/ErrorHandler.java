@@ -1,4 +1,3 @@
-/* $Id: ErrorHandler.java,v 1.2 2003/08/20 16:12:32 dvd Exp $ */
 package org.silpa.hyphenation.util;
 
 
@@ -43,13 +42,3 @@ public interface ErrorHandler {
      */
     public void exception(String s, Exception e);
 }
-
-/*
-* $Log: ErrorHandler.java,v $
-* Revision 1.2  2003/08/20 16:12:32  dvd
-* java docs
-*
-* Revision 1.1  2003/08/17 21:55:24  dvd
-* Hyphenator.java is a java program
-*
-*/

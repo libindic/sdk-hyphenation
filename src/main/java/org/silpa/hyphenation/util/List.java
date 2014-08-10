@@ -1,5 +1,3 @@
-/* $Id: List.java,v 1.2 2003/08/17 21:55:24 dvd Exp $ */
-
 package org.silpa.hyphenation.util;
 
 import java.util.Enumeration;
@@ -449,10 +447,3 @@ public class List implements Cloneable {
     }
 }
 
-/* $Log: List.java,v $
-/* Revision 1.2  2003/08/17 21:55:24  dvd
-/* Hyphenator.java is a java program
-/*
-* Revision 1.1  2003/08/17 20:31:00  dvd
-* CVS keywords added
-*/

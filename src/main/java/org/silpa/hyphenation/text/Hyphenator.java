@@ -1,5 +1,3 @@
-/* $Id: Hyphenator.java,v 1.17 2003/08/25 08:41:28 dvd Exp $ */
-
 package org.silpa.hyphenation.text;
 
 import android.content.Context;
