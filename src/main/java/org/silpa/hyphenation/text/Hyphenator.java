@@ -5,11 +5,13 @@ package org.silpa.hyphenation.text;
 import android.content.Context;
 
 import org.silpa.guesslanguage.GuessLanguage;
+import org.silpa.hyphenation.R;
 import org.silpa.hyphenation.text.Utf8TexParser.TexParserException;
 import org.silpa.hyphenation.util.ErrorHandler;
 import org.silpa.hyphenation.util.List;
 import org.silpa.hyphenation.util.LoggingErrorHandler;
 
+import java.io.IOException;
 import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
@@ -51,16 +53,15 @@ public class Hyphenator {
     }
 
     /**
-     * creates an uninitialized instance of Hyphenator. The same instance can be
+     * Constructor
+     * Creates an uninitialized instance of Hyphenator. The same instance can be
      * reused for different hyphenation tables.
+     *
+     * @param context context of application
      */
-    public Hyphenator() {
+    public Hyphenator(Context context) {
         errorHandler = new ForwardingErrorHandler(new LoggingErrorHandler(Logger.getLogger(this.getClass().getCanonicalName())));
         b = new ByteScanner(errorHandler);
-    }
-
-    public Hyphenator(Context context) {
-        this();
         this.mContext = context;
         this.guessLanguage = new GuessLanguage(this.mContext);
     }
@@ -262,9 +263,15 @@ public class Hyphenator {
         }
 
         try {
-            RuleDefinition rules = new Utf8TexParser().parse(indicHyphenRules.get(lang));
-            this.setRuleSet(rules);
+            if (lang.equals("en")) {
+                this.loadTable(this.mContext.getResources().openRawResource(R.raw.silpa_sdk_hyph_en));
+            } else {
+                RuleDefinition rules = new Utf8TexParser().parse(indicHyphenRules.get(lang));
+                this.setRuleSet(rules);
+            }
         } catch (TexParserException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
         return hyphenate(phrase, leftHyphenMin, rightHyphenMin);
@@ -374,21 +381,3 @@ public class Hyphenator {
     }
 
 }
-
-/*
- * $Log: Hyphenator.java,v $ Revision 1.17 2003/08/25 08:41:28 dvd 1. Added
- * symbolic accents: dot above, ring, ogonek, \i. 2. Updated hyphenation tables
- * for German, two tables are provided, with hexadecimal values and symbolic
- * accents. Revision 1.16 2003/08/21 16:03:52 dvd atilde added Revision 1.15
- * 2003/08/21 08:52:59 dvd pre-release 1.0 Revision 1.14 2003/08/21 05:50:30 dvd
- * *** empty log message *** Revision 1.13 2003/08/20 22:40:24 dvd bug fixes
- * Revision 1.12 2003/08/20 22:34:38 dvd bug fixes Revision 1.11 2003/08/20
- * 22:18:01 dvd *** empty log message *** Revision 1.10 2003/08/20 20:34:46 dvd
- * complete acctab Revision 1.9 2003/08/20 18:55:36 dvd Makefile makes Revision
- * 1.8 2003/08/20 18:07:07 dvd main() added to Hyphenator as invocation example
- * Revision 1.7 2003/08/20 17:31:55 dvd polish l and scandinavian o (accented)
- * are fixed Revision 1.6 2003/08/20 16:12:32 dvd java docs Revision 1.5
- * 2003/08/17 22:06:12 dvd *** empty log message *** Revision 1.4 2003/08/17
- * 21:55:24 dvd Hyphenator.java is a java program Revision 1.3 2003/08/17
- * 20:30:43 dvd CVS keywords added
- */
