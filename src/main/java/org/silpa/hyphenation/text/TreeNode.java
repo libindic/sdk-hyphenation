@@ -234,7 +234,7 @@ public class TreeNode {
         List list = new List();
 
         if (!isRoot()) {
-            list.snoc(new Character(getLastCharacter()));
+            list.snoc(Character.valueOf(getLastCharacter()));
             list.snoc(getHyphenation());
         }
 

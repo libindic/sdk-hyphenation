@@ -178,7 +178,7 @@ class ByteScanner implements RuleDefinition {
                             } else { /* is a lowercase hexadecimal digit */
                                 cc1 = in.read();
                                 if ((cc2 = hexval(cc1)) != -1) { /*
-																 * is a
+                                                                 * is a
 																 * two-digit
 																 * hexadecimal
 																 * value
@@ -248,7 +248,7 @@ class ByteScanner implements RuleDefinition {
                                 cc1 = -1;
                                 key += cc0;
                                 if (sep == '{') in.read();
-                                Object chrval = acctab.get(new Integer(key));
+                                Object chrval = acctab.get(Integer.valueOf(key));
                                 cc = chrval != null ? ((Integer) chrval)
                                         .intValue() : cc0; // unless the code
                                 // for the accented
@@ -341,7 +341,7 @@ class ByteScanner implements RuleDefinition {
                     int[] newnodevalues = new int[inv + 1];
                     for (int jnv = 0; jnv != newnodevalues.length; ++jnv)
                         newnodevalues[jnv] = 0;
-                    entry = new List().snoc(new Character(pattern[ich]))
+                    entry = new List().snoc(Character.valueOf(pattern[ich]))
                             .snoc(newnodevalues);
                     level.snoc(entry);
                     level = entry;
@@ -432,162 +432,162 @@ class ByteScanner implements RuleDefinition {
 
     static {
 		/* grave */
-        acctab.put(new Integer(cp2i('`', 'a')), new Integer(0xe0));
-        acctab.put(new Integer(cp2i('`', 'e')), new Integer(0xe8));
-        acctab.put(new Integer(cp2i('`', 'i')), new Integer(0xec));
-        acctab.put(new Integer(cp2i('`', 'o')), new Integer(0xf2));
-        acctab.put(new Integer(cp2i('`', 'u')), new Integer(0xf9));
-        acctab.put(new Integer(cp2i('`', 'w')), new Integer(0x1E81));
-        acctab.put(new Integer(cp2i('`', 'y')), new Integer(0x1EF3));
+        acctab.put(Integer.valueOf(cp2i('`', 'a')), Integer.valueOf(0xe0));
+        acctab.put(Integer.valueOf(cp2i('`', 'e')), Integer.valueOf(0xe8));
+        acctab.put(Integer.valueOf(cp2i('`', 'i')), Integer.valueOf(0xec));
+        acctab.put(Integer.valueOf(cp2i('`', 'o')), Integer.valueOf(0xf2));
+        acctab.put(Integer.valueOf(cp2i('`', 'u')), Integer.valueOf(0xf9));
+        acctab.put(Integer.valueOf(cp2i('`', 'w')), Integer.valueOf(0x1E81));
+        acctab.put(Integer.valueOf(cp2i('`', 'y')), Integer.valueOf(0x1EF3));
 
 		/* acute */
-        acctab.put(new Integer(cp2i('\'', 'a')), new Integer(0xe1));
-        acctab.put(new Integer(cp2i('\'', 'c')), new Integer(0x0107));
-        acctab.put(new Integer(cp2i('\'', 'e')), new Integer(0xe9));
-        acctab.put(new Integer(cp2i('\'', 'g')), new Integer(0x1F5));
-        acctab.put(new Integer(cp2i('\'', 'i')), new Integer(0xed));
-        acctab.put(new Integer(cp2i('\'', 'k')), new Integer(0x1E31));
-        acctab.put(new Integer(cp2i('\'', 'l')), new Integer(0x13A));
-        acctab.put(new Integer(cp2i('\'', 'm')), new Integer(0x1E3F));
-        acctab.put(new Integer(cp2i('\'', 'n')), new Integer(0x144));
-        acctab.put(new Integer(cp2i('\'', 'o')), new Integer(0xf3));
-        acctab.put(new Integer(cp2i('\'', 'p')), new Integer(0x1E55));
-        acctab.put(new Integer(cp2i('\'', 'r')), new Integer(0x155));
-        acctab.put(new Integer(cp2i('\'', 's')), new Integer(0x15B));
-        acctab.put(new Integer(cp2i('\'', 'u')), new Integer(0xfa));
-        acctab.put(new Integer(cp2i('\'', 'w')), new Integer(0x1E83));
-        acctab.put(new Integer(cp2i('\'', 'y')), new Integer(0xfd));
-        acctab.put(new Integer(cp2i('\'', 'z')), new Integer(0x17A));
+        acctab.put(Integer.valueOf(cp2i('\'', 'a')), Integer.valueOf(0xe1));
+        acctab.put(Integer.valueOf(cp2i('\'', 'c')), Integer.valueOf(0x0107));
+        acctab.put(Integer.valueOf(cp2i('\'', 'e')), Integer.valueOf(0xe9));
+        acctab.put(Integer.valueOf(cp2i('\'', 'g')), Integer.valueOf(0x1F5));
+        acctab.put(Integer.valueOf(cp2i('\'', 'i')), Integer.valueOf(0xed));
+        acctab.put(Integer.valueOf(cp2i('\'', 'k')), Integer.valueOf(0x1E31));
+        acctab.put(Integer.valueOf(cp2i('\'', 'l')), Integer.valueOf(0x13A));
+        acctab.put(Integer.valueOf(cp2i('\'', 'm')), Integer.valueOf(0x1E3F));
+        acctab.put(Integer.valueOf(cp2i('\'', 'n')), Integer.valueOf(0x144));
+        acctab.put(Integer.valueOf(cp2i('\'', 'o')), Integer.valueOf(0xf3));
+        acctab.put(Integer.valueOf(cp2i('\'', 'p')), Integer.valueOf(0x1E55));
+        acctab.put(Integer.valueOf(cp2i('\'', 'r')), Integer.valueOf(0x155));
+        acctab.put(Integer.valueOf(cp2i('\'', 's')), Integer.valueOf(0x15B));
+        acctab.put(Integer.valueOf(cp2i('\'', 'u')), Integer.valueOf(0xfa));
+        acctab.put(Integer.valueOf(cp2i('\'', 'w')), Integer.valueOf(0x1E83));
+        acctab.put(Integer.valueOf(cp2i('\'', 'y')), Integer.valueOf(0xfd));
+        acctab.put(Integer.valueOf(cp2i('\'', 'z')), Integer.valueOf(0x17A));
 
 		/* circuflex */
-        acctab.put(new Integer(cp2i('^', 'a')), new Integer(0xe2));
-        acctab.put(new Integer(cp2i('^', 'c')), new Integer(0x0109));
-        acctab.put(new Integer(cp2i('^', 'e')), new Integer(0xea));
-        acctab.put(new Integer(cp2i('^', 'g')), new Integer(0x011D));
-        acctab.put(new Integer(cp2i('^', 'h')), new Integer(0x0125));
-        acctab.put(new Integer(cp2i('^', 'i')), new Integer(0xee));
-        acctab.put(new Integer(cp2i('^', 'j')), new Integer(0x0135));
-        acctab.put(new Integer(cp2i('^', 'o')), new Integer(0xf4));
-        acctab.put(new Integer(cp2i('^', 's')), new Integer(0x015D));
-        acctab.put(new Integer(cp2i('^', 'u')), new Integer(0xfb));
-        acctab.put(new Integer(cp2i('^', 'w')), new Integer(0x0175));
-        acctab.put(new Integer(cp2i('^', 'y')), new Integer(0x0177));
-        acctab.put(new Integer(cp2i('^', 'z')), new Integer(0x1E91));
+        acctab.put(Integer.valueOf(cp2i('^', 'a')), Integer.valueOf(0xe2));
+        acctab.put(Integer.valueOf(cp2i('^', 'c')), Integer.valueOf(0x0109));
+        acctab.put(Integer.valueOf(cp2i('^', 'e')), Integer.valueOf(0xea));
+        acctab.put(Integer.valueOf(cp2i('^', 'g')), Integer.valueOf(0x011D));
+        acctab.put(Integer.valueOf(cp2i('^', 'h')), Integer.valueOf(0x0125));
+        acctab.put(Integer.valueOf(cp2i('^', 'i')), Integer.valueOf(0xee));
+        acctab.put(Integer.valueOf(cp2i('^', 'j')), Integer.valueOf(0x0135));
+        acctab.put(Integer.valueOf(cp2i('^', 'o')), Integer.valueOf(0xf4));
+        acctab.put(Integer.valueOf(cp2i('^', 's')), Integer.valueOf(0x015D));
+        acctab.put(Integer.valueOf(cp2i('^', 'u')), Integer.valueOf(0xfb));
+        acctab.put(Integer.valueOf(cp2i('^', 'w')), Integer.valueOf(0x0175));
+        acctab.put(Integer.valueOf(cp2i('^', 'y')), Integer.valueOf(0x0177));
+        acctab.put(Integer.valueOf(cp2i('^', 'z')), Integer.valueOf(0x1E91));
 
 		/* dieresis */
-        acctab.put(new Integer(cp2i('"', 'a')), new Integer(0xe4));
-        acctab.put(new Integer(cp2i('"', 'e')), new Integer(0xeb));
-        acctab.put(new Integer(cp2i('"', 'h')), new Integer(0x1E27));
-        acctab.put(new Integer(cp2i('"', 'i')), new Integer(0xef));
-        acctab.put(new Integer(cp2i('"', 'o')), new Integer(0xf6));
-        acctab.put(new Integer(cp2i('"', 't')), new Integer(0x1E97));
-        acctab.put(new Integer(cp2i('"', 'u')), new Integer(0xfc));
-        acctab.put(new Integer(cp2i('"', 'w')), new Integer(0x1E85));
-        acctab.put(new Integer(cp2i('"', 'x')), new Integer(0x1E8D));
-        acctab.put(new Integer(cp2i('"', 'y')), new Integer(0xff));
+        acctab.put(Integer.valueOf(cp2i('"', 'a')), Integer.valueOf(0xe4));
+        acctab.put(Integer.valueOf(cp2i('"', 'e')), Integer.valueOf(0xeb));
+        acctab.put(Integer.valueOf(cp2i('"', 'h')), Integer.valueOf(0x1E27));
+        acctab.put(Integer.valueOf(cp2i('"', 'i')), Integer.valueOf(0xef));
+        acctab.put(Integer.valueOf(cp2i('"', 'o')), Integer.valueOf(0xf6));
+        acctab.put(Integer.valueOf(cp2i('"', 't')), Integer.valueOf(0x1E97));
+        acctab.put(Integer.valueOf(cp2i('"', 'u')), Integer.valueOf(0xfc));
+        acctab.put(Integer.valueOf(cp2i('"', 'w')), Integer.valueOf(0x1E85));
+        acctab.put(Integer.valueOf(cp2i('"', 'x')), Integer.valueOf(0x1E8D));
+        acctab.put(Integer.valueOf(cp2i('"', 'y')), Integer.valueOf(0xff));
 
 		/* Hungarian umlaut */
-        acctab.put(new Integer(cp2i('H', 'o')), new Integer(0x151));
-        acctab.put(new Integer(cp2i('H', 'u')), new Integer(0x171));
+        acctab.put(Integer.valueOf(cp2i('H', 'o')), Integer.valueOf(0x151));
+        acctab.put(Integer.valueOf(cp2i('H', 'u')), Integer.valueOf(0x171));
 
 		/* tilde */
-        acctab.put(new Integer(cp2i('~', 'a')), new Integer(0xE3));
-        acctab.put(new Integer(cp2i('~', 'e')), new Integer(0x1EBD));
-        acctab.put(new Integer(cp2i('~', 'i')), new Integer(0x0129));
-        acctab.put(new Integer(cp2i('~', 'n')), new Integer(0x00F1));
-        acctab.put(new Integer(cp2i('~', 'o')), new Integer(0x00F5));
-        acctab.put(new Integer(cp2i('~', 'u')), new Integer(0x0169));
-        acctab.put(new Integer(cp2i('~', 'v')), new Integer(0x1E7D));
-        acctab.put(new Integer(cp2i('~', 'y')), new Integer(0x1EF9));
+        acctab.put(Integer.valueOf(cp2i('~', 'a')), Integer.valueOf(0xE3));
+        acctab.put(Integer.valueOf(cp2i('~', 'e')), Integer.valueOf(0x1EBD));
+        acctab.put(Integer.valueOf(cp2i('~', 'i')), Integer.valueOf(0x0129));
+        acctab.put(Integer.valueOf(cp2i('~', 'n')), Integer.valueOf(0x00F1));
+        acctab.put(Integer.valueOf(cp2i('~', 'o')), Integer.valueOf(0x00F5));
+        acctab.put(Integer.valueOf(cp2i('~', 'u')), Integer.valueOf(0x0169));
+        acctab.put(Integer.valueOf(cp2i('~', 'v')), Integer.valueOf(0x1E7D));
+        acctab.put(Integer.valueOf(cp2i('~', 'y')), Integer.valueOf(0x1EF9));
 
 		/* breve */
-        acctab.put(new Integer(cp2i('u', 'a')), new Integer(0x103));
-        acctab.put(new Integer(cp2i('u', 'e')), new Integer(0x115));
-        acctab.put(new Integer(cp2i('u', 'g')), new Integer(0x11F));
-        acctab.put(new Integer(cp2i('u', 'i')), new Integer(0x12D));
-        acctab.put(new Integer(cp2i('u', 'o')), new Integer(0x14F));
-        acctab.put(new Integer(cp2i('u', 'u')), new Integer(0x16D));
+        acctab.put(Integer.valueOf(cp2i('u', 'a')), Integer.valueOf(0x103));
+        acctab.put(Integer.valueOf(cp2i('u', 'e')), Integer.valueOf(0x115));
+        acctab.put(Integer.valueOf(cp2i('u', 'g')), Integer.valueOf(0x11F));
+        acctab.put(Integer.valueOf(cp2i('u', 'i')), Integer.valueOf(0x12D));
+        acctab.put(Integer.valueOf(cp2i('u', 'o')), Integer.valueOf(0x14F));
+        acctab.put(Integer.valueOf(cp2i('u', 'u')), Integer.valueOf(0x16D));
 
 		/* caron */
-        acctab.put(new Integer(cp2i('v', 'a')), new Integer(0x1CE));
-        acctab.put(new Integer(cp2i('v', ' ')), new Integer(0x2C7));
-        acctab.put(new Integer(cp2i('v', 'c')), new Integer(0x10D));
-        acctab.put(new Integer(cp2i('v', 'd')), new Integer(0x10F));
-        acctab.put(new Integer(cp2i('v', 'e')), new Integer(0x11B));
-        acctab.put(new Integer(cp2i('v', 'g')), new Integer(0x1E7));
-        acctab.put(new Integer(cp2i('v', 'i')), new Integer(0x1D0));
-        acctab.put(new Integer(cp2i('v', 'j')), new Integer(0x1F0));
-        acctab.put(new Integer(cp2i('v', 'k')), new Integer(0x1E9));
-        acctab.put(new Integer(cp2i('v', 'l')), new Integer(0x13E));
-        acctab.put(new Integer(cp2i('v', 'n')), new Integer(0x148));
-        acctab.put(new Integer(cp2i('v', 'o')), new Integer(0x1D2));
-        acctab.put(new Integer(cp2i('v', 'r')), new Integer(0x159));
-        acctab.put(new Integer(cp2i('v', 's')), new Integer(0x161));
-        acctab.put(new Integer(cp2i('v', 't')), new Integer(0x165));
-        acctab.put(new Integer(cp2i('v', 'u')), new Integer(0x1D4));
-        acctab.put(new Integer(cp2i('v', 'z')), new Integer(0x17E));
+        acctab.put(Integer.valueOf(cp2i('v', 'a')), Integer.valueOf(0x1CE));
+        acctab.put(Integer.valueOf(cp2i('v', ' ')), Integer.valueOf(0x2C7));
+        acctab.put(Integer.valueOf(cp2i('v', 'c')), Integer.valueOf(0x10D));
+        acctab.put(Integer.valueOf(cp2i('v', 'd')), Integer.valueOf(0x10F));
+        acctab.put(Integer.valueOf(cp2i('v', 'e')), Integer.valueOf(0x11B));
+        acctab.put(Integer.valueOf(cp2i('v', 'g')), Integer.valueOf(0x1E7));
+        acctab.put(Integer.valueOf(cp2i('v', 'i')), Integer.valueOf(0x1D0));
+        acctab.put(Integer.valueOf(cp2i('v', 'j')), Integer.valueOf(0x1F0));
+        acctab.put(Integer.valueOf(cp2i('v', 'k')), Integer.valueOf(0x1E9));
+        acctab.put(Integer.valueOf(cp2i('v', 'l')), Integer.valueOf(0x13E));
+        acctab.put(Integer.valueOf(cp2i('v', 'n')), Integer.valueOf(0x148));
+        acctab.put(Integer.valueOf(cp2i('v', 'o')), Integer.valueOf(0x1D2));
+        acctab.put(Integer.valueOf(cp2i('v', 'r')), Integer.valueOf(0x159));
+        acctab.put(Integer.valueOf(cp2i('v', 's')), Integer.valueOf(0x161));
+        acctab.put(Integer.valueOf(cp2i('v', 't')), Integer.valueOf(0x165));
+        acctab.put(Integer.valueOf(cp2i('v', 'u')), Integer.valueOf(0x1D4));
+        acctab.put(Integer.valueOf(cp2i('v', 'z')), Integer.valueOf(0x17E));
 
 		/* cedilla */
-        acctab.put(new Integer(cp2i('c', 'c')), new Integer(0xe7));
-        acctab.put(new Integer(cp2i('c', 'd')), new Integer(0x1E11));
-        acctab.put(new Integer(cp2i('c', 'g')), new Integer(0x123));
-        acctab.put(new Integer(cp2i('c', 'h')), new Integer(0x1E29));
-        acctab.put(new Integer(cp2i('c', 'k')), new Integer(0x137));
-        acctab.put(new Integer(cp2i('c', 'l')), new Integer(0x13C));
-        acctab.put(new Integer(cp2i('c', 'n')), new Integer(0x146));
-        acctab.put(new Integer(cp2i('c', 'r')), new Integer(0x157));
-        acctab.put(new Integer(cp2i('c', 's')), new Integer(0x15F));
-        acctab.put(new Integer(cp2i('c', 't')), new Integer(0x163));
+        acctab.put(Integer.valueOf(cp2i('c', 'c')), Integer.valueOf(0xe7));
+        acctab.put(Integer.valueOf(cp2i('c', 'd')), Integer.valueOf(0x1E11));
+        acctab.put(Integer.valueOf(cp2i('c', 'g')), Integer.valueOf(0x123));
+        acctab.put(Integer.valueOf(cp2i('c', 'h')), Integer.valueOf(0x1E29));
+        acctab.put(Integer.valueOf(cp2i('c', 'k')), Integer.valueOf(0x137));
+        acctab.put(Integer.valueOf(cp2i('c', 'l')), Integer.valueOf(0x13C));
+        acctab.put(Integer.valueOf(cp2i('c', 'n')), Integer.valueOf(0x146));
+        acctab.put(Integer.valueOf(cp2i('c', 'r')), Integer.valueOf(0x157));
+        acctab.put(Integer.valueOf(cp2i('c', 's')), Integer.valueOf(0x15F));
+        acctab.put(Integer.valueOf(cp2i('c', 't')), Integer.valueOf(0x163));
 
 		/* dot below */
-        acctab.put(new Integer(cp2i('d', 'a')), new Integer(0x1EA1));
-        acctab.put(new Integer(cp2i('d', 'b')), new Integer(0x1E05));
-        acctab.put(new Integer(cp2i('d', 'd')), new Integer(0x1E0D));
-        acctab.put(new Integer(cp2i('d', 'e')), new Integer(0x1EB9));
-        acctab.put(new Integer(cp2i('d', 'h')), new Integer(0x1E25));
-        acctab.put(new Integer(cp2i('d', 'i')), new Integer(0x1ECB));
-        acctab.put(new Integer(cp2i('d', 'k')), new Integer(0x1E33));
-        acctab.put(new Integer(cp2i('d', 'l')), new Integer(0x1E37));
-        acctab.put(new Integer(cp2i('d', 'm')), new Integer(0x1E43));
-        acctab.put(new Integer(cp2i('d', 'n')), new Integer(0x1E47));
-        acctab.put(new Integer(cp2i('d', 'o')), new Integer(0x1ECD));
-        acctab.put(new Integer(cp2i('d', 'r')), new Integer(0x1E5B));
-        acctab.put(new Integer(cp2i('d', 's')), new Integer(0x1E63));
-        acctab.put(new Integer(cp2i('d', 't')), new Integer(0x1E6D));
-        acctab.put(new Integer(cp2i('d', 'u')), new Integer(0x1EE5));
-        acctab.put(new Integer(cp2i('d', 'v')), new Integer(0x1E7F));
-        acctab.put(new Integer(cp2i('d', 'w')), new Integer(0x1E89));
-        acctab.put(new Integer(cp2i('d', 'y')), new Integer(0x1EF5));
-        acctab.put(new Integer(cp2i('d', 'z')), new Integer(0x1E93));
+        acctab.put(Integer.valueOf(cp2i('d', 'a')), Integer.valueOf(0x1EA1));
+        acctab.put(Integer.valueOf(cp2i('d', 'b')), Integer.valueOf(0x1E05));
+        acctab.put(Integer.valueOf(cp2i('d', 'd')), Integer.valueOf(0x1E0D));
+        acctab.put(Integer.valueOf(cp2i('d', 'e')), Integer.valueOf(0x1EB9));
+        acctab.put(Integer.valueOf(cp2i('d', 'h')), Integer.valueOf(0x1E25));
+        acctab.put(Integer.valueOf(cp2i('d', 'i')), Integer.valueOf(0x1ECB));
+        acctab.put(Integer.valueOf(cp2i('d', 'k')), Integer.valueOf(0x1E33));
+        acctab.put(Integer.valueOf(cp2i('d', 'l')), Integer.valueOf(0x1E37));
+        acctab.put(Integer.valueOf(cp2i('d', 'm')), Integer.valueOf(0x1E43));
+        acctab.put(Integer.valueOf(cp2i('d', 'n')), Integer.valueOf(0x1E47));
+        acctab.put(Integer.valueOf(cp2i('d', 'o')), Integer.valueOf(0x1ECD));
+        acctab.put(Integer.valueOf(cp2i('d', 'r')), Integer.valueOf(0x1E5B));
+        acctab.put(Integer.valueOf(cp2i('d', 's')), Integer.valueOf(0x1E63));
+        acctab.put(Integer.valueOf(cp2i('d', 't')), Integer.valueOf(0x1E6D));
+        acctab.put(Integer.valueOf(cp2i('d', 'u')), Integer.valueOf(0x1EE5));
+        acctab.put(Integer.valueOf(cp2i('d', 'v')), Integer.valueOf(0x1E7F));
+        acctab.put(Integer.valueOf(cp2i('d', 'w')), Integer.valueOf(0x1E89));
+        acctab.put(Integer.valueOf(cp2i('d', 'y')), Integer.valueOf(0x1EF5));
+        acctab.put(Integer.valueOf(cp2i('d', 'z')), Integer.valueOf(0x1E93));
 
 		/* dot above */
-        acctab.put(new Integer(cp2i('.', 'c')), new Integer(0x10B));
-        acctab.put(new Integer(cp2i('.', 'e')), new Integer(0x117));
-        acctab.put(new Integer(cp2i('.', 'g')), new Integer(0x121));
-        acctab.put(new Integer(cp2i('.', 'l')), new Integer(0x140));
-        acctab.put(new Integer(cp2i('.', 'z')), new Integer(0x17C));
+        acctab.put(Integer.valueOf(cp2i('.', 'c')), Integer.valueOf(0x10B));
+        acctab.put(Integer.valueOf(cp2i('.', 'e')), Integer.valueOf(0x117));
+        acctab.put(Integer.valueOf(cp2i('.', 'g')), Integer.valueOf(0x121));
+        acctab.put(Integer.valueOf(cp2i('.', 'l')), Integer.valueOf(0x140));
+        acctab.put(Integer.valueOf(cp2i('.', 'z')), Integer.valueOf(0x17C));
 
 		/* ring */
-        acctab.put(new Integer(cp2i('r', 'a')), new Integer(0xE5));
-        acctab.put(new Integer(cp2i('r', 'u')), new Integer(0x16F));
-        acctab.put(new Integer(cp2i('r', 'w')), new Integer(0x1E98));
-        acctab.put(new Integer(cp2i('r', 'y')), new Integer(0x1E99));
+        acctab.put(Integer.valueOf(cp2i('r', 'a')), Integer.valueOf(0xE5));
+        acctab.put(Integer.valueOf(cp2i('r', 'u')), Integer.valueOf(0x16F));
+        acctab.put(Integer.valueOf(cp2i('r', 'w')), Integer.valueOf(0x1E98));
+        acctab.put(Integer.valueOf(cp2i('r', 'y')), Integer.valueOf(0x1E99));
 
 		/* ogonek */
-        acctab.put(new Integer(cp2i('k', 'a')), new Integer(0x105));
-        acctab.put(new Integer(cp2i('k', 'e')), new Integer(0x119));
-        acctab.put(new Integer(cp2i('k', 'i')), new Integer(0x12F));
-        acctab.put(new Integer(cp2i('k', 'o')), new Integer(0x1EB));
-        acctab.put(new Integer(cp2i('k', 'u')), new Integer(0x173));
+        acctab.put(Integer.valueOf(cp2i('k', 'a')), Integer.valueOf(0x105));
+        acctab.put(Integer.valueOf(cp2i('k', 'e')), Integer.valueOf(0x119));
+        acctab.put(Integer.valueOf(cp2i('k', 'i')), Integer.valueOf(0x12F));
+        acctab.put(Integer.valueOf(cp2i('k', 'o')), Integer.valueOf(0x1EB));
+        acctab.put(Integer.valueOf(cp2i('k', 'u')), Integer.valueOf(0x173));
 
 		/* special codes */
-        acctab.put(new Integer(cp2i('a', 'a')), new Integer(0xe5));
-        acctab.put(new Integer(cp2i('a', 'e')), new Integer(0xe6));
-        acctab.put(new Integer(cp2i('i', ' ')), new Integer(0x131));
-        acctab.put(new Integer(cp2i('l', ' ')), new Integer(0x142));
-        acctab.put(new Integer(cp2i('o', ' ')), new Integer(0xf8));
-        acctab.put(new Integer(cp2i('o', 'e')), new Integer(0x153));
-        acctab.put(new Integer(cp2i('s', 's')), new Integer(0xdf));
+        acctab.put(Integer.valueOf(cp2i('a', 'a')), Integer.valueOf(0xe5));
+        acctab.put(Integer.valueOf(cp2i('a', 'e')), Integer.valueOf(0xe6));
+        acctab.put(Integer.valueOf(cp2i('i', ' ')), Integer.valueOf(0x131));
+        acctab.put(Integer.valueOf(cp2i('l', ' ')), Integer.valueOf(0x142));
+        acctab.put(Integer.valueOf(cp2i('o', ' ')), Integer.valueOf(0xf8));
+        acctab.put(Integer.valueOf(cp2i('o', 'e')), Integer.valueOf(0x153));
+        acctab.put(Integer.valueOf(cp2i('s', 's')), Integer.valueOf(0xdf));
     }
 
 }
