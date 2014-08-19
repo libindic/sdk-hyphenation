@@ -33,6 +33,8 @@ public class TreeNode {
 
     /**
      * Create a root node to create all other nodes inside.
+     *
+     * @return TreeNode object
      */
     public static TreeNode createRoot() {
         return new TreeNode("");
@@ -40,6 +42,9 @@ public class TreeNode {
 
     /**
      * Create a new node from a string pattern
+     *
+     * @param pattern string
+     * @return Treenode object
      */
     public static TreeNode createFromPattern(String pattern) {
         char[] patternChars = pattern.toCharArray();
@@ -85,7 +90,10 @@ public class TreeNode {
     }
 
     /**
+     * Constructor
      * Create a node with no hyphenation information (a blank node).
+     *
+     * @param segment string
      */
     public TreeNode(String segment) {
         this.segment = segment;
@@ -95,6 +103,9 @@ public class TreeNode {
 
     /**
      * Create a node with hyphenation information.
+     *
+     * @param segment         string
+     * @param hyphenationData int array with hyphenation data
      */
     public TreeNode(String segment, int[] hyphenationData) {
         if (segment.length() + 1 != hyphenationData.length) {
@@ -151,6 +162,8 @@ public class TreeNode {
 
     /**
      * Copy all children from another node.
+     *
+     * @param source TreeNode source
      */
     private void copyChildren(TreeNode source) {
         for (char c : source.children.keySet()) {
@@ -160,6 +173,8 @@ public class TreeNode {
 
     /**
      * Add place holder node required by tree structure.
+     *
+     * @param nodeCharacter character
      */
     private void addBlankChild(char nodeCharacter) {
         children.put(nodeCharacter, new TreeNode(this.segment + nodeCharacter));
@@ -167,6 +182,8 @@ public class TreeNode {
 
     /**
      * Parse pattern and add the resulting segment and hyphernation to the tree.
+     *
+     * @param pattern string
      */
     public void createChildFromPattern(String pattern) {
         TreeNode tmpNode = TreeNode.createFromPattern(pattern);
@@ -186,6 +203,11 @@ public class TreeNode {
         return hyphenation;
     }
 
+    /**
+     * To get pattern
+     *
+     * @return string
+     */
     public String getPattern() {
         StringBuffer pattern = new StringBuffer();
 
@@ -209,12 +231,20 @@ public class TreeNode {
         return children.containsKey(c);
     }
 
+    /**
+     * To get child
+     *
+     * @param c character
+     * @return TreeNode
+     */
     public TreeNode getChild(char c) {
         return children.get(c);
     }
 
     /**
      * Is this the root node onto which all other nodes should be added?
+     *
+     * @return true/false
      */
     public boolean isRoot() {
         return this.segment == "";
@@ -222,6 +252,8 @@ public class TreeNode {
 
     /**
      * Node is only a place holder required by the tree structure.
+     *
+     * @return true/false
      */
     public boolean isBlank() {
         return this.blank;
@@ -229,6 +261,8 @@ public class TreeNode {
 
     /**
      * Create texhyphj original (lisp like) List structure from node tree for consumption by Hypernator
+     *
+     * @return List
      */
     public List toList() {
         List list = new List();

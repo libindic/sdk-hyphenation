@@ -87,12 +87,11 @@ public class Hyphenator {
     }
 
     /**
-     * <p>Loads a hyphenation table with a reader. This enables the use of UTF-8 pattern files.
+     * Loads a hyphenation table with a reader. This enables the use of UTF-8 pattern files.
      * Note that escape codes in the original tex-files are not supported, e.g. ^^f6.
      * This method also differs in that multiple calls to loadTable are not joined, only the
-     * most recent pattern file is used.</p>
-     * <p/>
-     * <p>Only "\pattern{" and "\hyphenation{" groups are supported.</p>
+     * most recent pattern file is used.
+     * Only "\pattern{" and "\hyphenation{" groups are supported.
      *
      * @param reader a reader containing hyphenation patterns (most likely a file)
      * @throws TexParserException if there are problems reading the input
@@ -106,7 +105,7 @@ public class Hyphenator {
      * loads hyphenation table
      *
      * @param in hyphenation table
-     * @throws java.io.IOException
+     * @throws java.io.IOException IOException while reading rules
      */
     public void loadTable(java.io.InputStream in) throws java.io.IOException {
         int[] codelist = new int[256];
@@ -122,7 +121,7 @@ public class Hyphenator {
      *
      * @param in       hyphenation table
      * @param codelist an array of 256 elements. maps one-byte codes to UTF codes
-     * @throws java.io.IOException
+     * @throws java.io.IOException IOException while reading rules
      */
     public void loadTable(java.io.InputStream in, int[] codelist)
             throws java.io.IOException {

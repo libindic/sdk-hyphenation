@@ -40,6 +40,8 @@ public class List implements Cloneable {
 
     /**
      * empties the list
+     *
+     * @return cleared list
      */
     public final List clear() {
         head = new Link();
@@ -63,10 +65,12 @@ public class List implements Cloneable {
         }
     }
 
- /* clone/enloc are written to be as fast as possible */
+    /* clone/enloc are written to be as fast as possible */
 
     /**
      * makes a shallow copy of the list
+     *
+     * @return object
      */
     public Object clone() {
         List l = newList();
@@ -83,6 +87,8 @@ public class List implements Cloneable {
 
     /**
      * shallow copy reversed
+     *
+     * @return list
      */
     public final List enolc() {
         List l = newList();
@@ -99,6 +105,8 @@ public class List implements Cloneable {
 
     /**
      * reversed list
+     *
+     * @return reversed list
      */
     public final List reverse() {
         return length > 1 ? enolc() : this;
@@ -106,6 +114,9 @@ public class List implements Cloneable {
 
     /**
      * the same as cons
+     *
+     * @param o the object to add
+     * @return this, modified by addition
      */
     public final List unshift(Object o) {
         return cons(o);
@@ -142,7 +153,10 @@ public class List implements Cloneable {
     }
 
     /**
-     * the same as snoc
+     * append one element to the list, destructive.
+     *
+     * @param o the object to add
+     * @return this, modified by addition
      */
     public final List append(Object o) {
         return snoc(o);
@@ -193,6 +207,8 @@ public class List implements Cloneable {
 
     /**
      * whether the list is empty
+     *
+     * @return true if empty else false
      */
     public final boolean isEmpty() {
         return !isPair();
@@ -200,6 +216,8 @@ public class List implements Cloneable {
 
     /**
      * whether the list is not empty (is a pair)
+     *
+     * @return true if pair else false
      */
     public final boolean isPair() {
         return head.next != tail.next.next;
@@ -207,6 +225,8 @@ public class List implements Cloneable {
 
     /**
      * number of links in the list
+     *
+     * @return int
      */
     public final int length() {
         return length;
@@ -264,6 +284,9 @@ public class List implements Cloneable {
 
     /**
      * puts an object into the first element of the list
+     *
+     * @param o Object
+     * @return this, after putting object into first element of list
      */
     public final List setCar(Object o) {
         if (!isPair()) throw new java.util.NoSuchElementException("list is not a pair");
@@ -273,6 +296,9 @@ public class List implements Cloneable {
 
     /**
      * binds value to the last link in the list
+     *
+     * @param o Object
+     * @return this, after binding value to last link in list
      */
     public final List setLast(Object o) {
         if (!isPair()) throw new java.util.NoSuchElementException("list is not a pair");
@@ -282,6 +308,9 @@ public class List implements Cloneable {
 
     /**
      * replaces the tail of a list with another list
+     *
+     * @param l list l
+     * @return this, after
      */
     public final List setCdr(List l) {
         if (!isPair()) throw new java.util.NoSuchElementException("list is not a pair");
@@ -315,6 +344,8 @@ public class List implements Cloneable {
 
     /**
      * put a mark at the last element
+     *
+     * @return Mark object
      */
     public final Mark mark() {
         return new Mark();
@@ -322,6 +353,10 @@ public class List implements Cloneable {
 
     /**
      * store an object after the mark
+     *
+     * @param mark mark object
+     * @param o    Object
+     * @return this, after storing after the mark
      */
     public final List insert(Mark mark, Object o) {
         Link link = new Link();
@@ -336,6 +371,9 @@ public class List implements Cloneable {
     /**
      * cut the list after the mark, the length value will be incorrect
      * if elements are inserted before the mark
+     *
+     * @param mark mark obj
+     * @return new list
      */
     public final List cut(Mark mark) {
         tail.next = mark.link;
@@ -345,6 +383,9 @@ public class List implements Cloneable {
 
     /**
      * hygienic cut. The length is recomputed.
+     *
+     * @param mark mark
+     * @return list
      */
     public final List hcut(Mark mark) {
         tail.next = mark.link;
@@ -359,6 +400,10 @@ public class List implements Cloneable {
 
     /**
      * insert a list after the mark
+     *
+     * @param mark list mark
+     * @param l    list l
+     * @return new list after insertion
      */
     public final List insert(Link mark, List l) {
         Link next = mark.next;
@@ -371,6 +416,8 @@ public class List implements Cloneable {
 
     /**
      * Transform List to a human readable string (useful in testing and debugging).
+     *
+     * @return string
      */
     public String describe() {
         StringBuffer buffer = new StringBuffer();
@@ -378,6 +425,11 @@ public class List implements Cloneable {
         return buffer.toString();
     }
 
+    /**
+     * Description
+     *
+     * @param buffer string buffer
+     */
     private void describe(StringBuffer buffer) {
         buffer.append("(");
 
@@ -409,6 +461,11 @@ public class List implements Cloneable {
     }
 
 
+    /**
+     * To String method
+     *
+     * @return string
+     */
     public String toString() {
         return isPair() ? longTail().addToString(head().toString()) : "()";
     }

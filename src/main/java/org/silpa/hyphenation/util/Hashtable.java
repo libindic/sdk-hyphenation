@@ -27,7 +27,10 @@ public class Hashtable extends java.util.Dictionary implements Cloneable {
     }
 
     /**
+     * Constructor
      * Creates a hash table with the specified initial capacity.
+     *
+     * @param n size
      */
     public Hashtable(int n) {
         n = (int) ((n + 1) / LOAD_FACTOR);
@@ -150,6 +153,9 @@ public class Hashtable extends java.util.Dictionary implements Cloneable {
      * Removes the object with the specified key from the table.
      * Returns the object removed or null if there was no such object
      * in the table.
+     *
+     * @param key object key
+     * @return Object
      */
     public final Object remove(Object key) {
         if (used > 0) {
