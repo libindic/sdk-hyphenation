@@ -1,6 +1,6 @@
-package org.silpa.hyphenation.text;
+package org.libindic.hyphenation.text;
 
-import org.silpa.hyphenation.util.List;
+import org.libindic.hyphenation.util.List;
 
 import java.util.ArrayList;
 import java.util.Collections;

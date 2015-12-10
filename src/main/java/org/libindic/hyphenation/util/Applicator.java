@@ -1,4 +1,4 @@
-package org.silpa.hyphenation.util;
+package org.libindic.hyphenation.util;
 
 public interface Applicator { // argument for map,foreach,traverse
 

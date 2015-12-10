@@ -1,4 +1,4 @@
-package org.silpa.hyphenation.util;
+package org.libindic.hyphenation.util;
 
 // to compare performances
 // public class Hashtable extends java.util.Hashtable {}

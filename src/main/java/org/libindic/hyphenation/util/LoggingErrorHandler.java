@@ -1,4 +1,4 @@
-package org.silpa.hyphenation.util;
+package org.libindic.hyphenation.util;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;

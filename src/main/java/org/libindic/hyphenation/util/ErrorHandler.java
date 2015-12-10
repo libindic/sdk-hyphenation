@@ -1,4 +1,4 @@
-package org.silpa.hyphenation.util;
+package org.libindic.hyphenation.util;
 
 
 /**

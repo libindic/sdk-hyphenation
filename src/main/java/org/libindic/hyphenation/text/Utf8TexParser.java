@@ -1,6 +1,6 @@
-package org.silpa.hyphenation.text;
+package org.libindic.hyphenation.text;
 
-import org.silpa.hyphenation.util.List;
+import org.libindic.hyphenation.util.List;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -201,7 +201,7 @@ public class Utf8TexParser {
     private static class TreeNodeScanner implements RuleDefinition {
         final private TreeNode rulesRoot;
         final private Map<String, int[]> exceptions;
-        final private Map<Character, org.silpa.hyphenation.util.List> listCache = new Hashtable<Character, List>();
+        final private Map<Character, org.libindic.hyphenation.util.List> listCache = new Hashtable<Character, List>();
 
         public TreeNodeScanner(TreeNode root, Map<String, int[]> exceptions) {
             this.rulesRoot = root;
@@ -220,7 +220,7 @@ public class Utf8TexParser {
             } else {
                 // List creation is relatively heavy, so let's only do it once
                 // per character.
-                org.silpa.hyphenation.util.List list = new org.silpa.hyphenation.util.List();
+                org.libindic.hyphenation.util.List list = new org.libindic.hyphenation.util.List();
 
                 if (rulesRoot.hasChild(ch)) {
                     list.snoc(rulesRoot.getChild(ch).toList());

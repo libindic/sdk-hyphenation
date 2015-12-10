@@ -1,8 +1,8 @@
-package org.silpa.hyphenation.text;
+package org.libindic.hyphenation.text;
 
-import org.silpa.hyphenation.util.ErrorHandler;
-import org.silpa.hyphenation.util.Hashtable;
-import org.silpa.hyphenation.util.List;
+import org.libindic.hyphenation.util.ErrorHandler;
+import org.libindic.hyphenation.util.Hashtable;
+import org.libindic.hyphenation.util.List;
 
 import java.io.IOException;
 

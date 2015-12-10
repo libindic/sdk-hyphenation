@@ -1,4 +1,4 @@
-package org.silpa.hyphenation.util;
+package org.libindic.hyphenation.util;
 
 import java.util.Enumeration;
 
@@ -323,7 +323,7 @@ public class List implements Cloneable {
      * perform an operation on each element of the list
      *
      * @param a applicator
-     * @see org.silpa.hyphenation.util.Applicator
+     * @see org.libindic.hyphenation.util.Applicator
      */
     public final void foreach(Applicator a) {
         for (Enumeration e = elements(); e.hasMoreElements(); ) a.f(e.nextElement());
@@ -335,7 +335,7 @@ public class List implements Cloneable {
      * @param t list to put the new values into
      * @param a applicator
      * @return the list passed as t filled with new elements
-     * @see org.silpa.hyphenation.util.Applicator
+     * @see org.libindic.hyphenation.util.Applicator
      */
     public final List map(List t /* target, to */, Applicator a) {
         for (Enumeration e = elements(); e.hasMoreElements(); ) t.append(a.f(e.nextElement()));

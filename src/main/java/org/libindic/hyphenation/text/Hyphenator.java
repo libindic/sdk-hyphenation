@@ -1,13 +1,13 @@
-package org.silpa.hyphenation.text;
+package org.libindic.hyphenation.text;
 
 import android.content.Context;
 
-import org.silpa.guesslanguage.GuessLanguage;
-import org.silpa.hyphenation.R;
-import org.silpa.hyphenation.text.Utf8TexParser.TexParserException;
-import org.silpa.hyphenation.util.ErrorHandler;
-import org.silpa.hyphenation.util.List;
-import org.silpa.hyphenation.util.LoggingErrorHandler;
+import org.libindic.guesslanguage.GuessLanguage;
+import org.libindic.hyphenation.R;
+import org.libindic.hyphenation.text.Utf8TexParser.TexParserException;
+import org.libindic.hyphenation.util.ErrorHandler;
+import org.libindic.hyphenation.util.List;
+import org.libindic.hyphenation.util.LoggingErrorHandler;
 
 import java.io.IOException;
 import java.io.Reader;
@@ -80,7 +80,7 @@ public class Hyphenator {
      * installs error handler.
      *
      * @param eh ErrorHandler used while parsing and hyphenating
-     * @see org.silpa.hyphenation.util.ErrorHandler
+     * @see org.libindic.hyphenation.util.ErrorHandler
      */
     public void setErrorHandler(ErrorHandler eh) {
         errorHandler.setTarget(eh);
